@@ -86,13 +86,16 @@ app.post("/combine", async (req, res) => {
     await page.goto(url);
     console.log("Page opened");
 
+    const startedAt = new Date().toLocaleTimeString();
     // Generate all possible combinations of characters
     async function generateCombinations(prefix, characters, length) {
         if (length === 0) {
             return false;
         }
 
+        let processTime = new Date().toLocaleTimeString();
         for (let i = 0; i < characters.length; i++) {
+
             const newPrefix = prefix + characters[i];
 
             const result = await handleLogin(
@@ -105,7 +108,7 @@ app.post("/combine", async (req, res) => {
                 messageErrorSelector
             );
 
-            console.table([newPrefix, emailValue, result]);
+            console.table([newPrefix, emailValue,`startedAt: ${startedAt}`, `endedAt: ${processTime}`, result]);
             if (result) {
                 return true; // If login is successful, return true
             }
