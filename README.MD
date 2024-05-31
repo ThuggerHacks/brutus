@@ -33,6 +33,8 @@ To run the **Brutus**, follow these steps:
     - `minLength`: The minimum length of the password combinations.
     - `maxLength`: The maximum length of the password combinations.
 
+    ```Note: You can obtain all these selectors by inspecting your target website and extracting them```
+
 3. The server will respond with either "Login successful" or "Login failed".
 
 ### API Endpoints
