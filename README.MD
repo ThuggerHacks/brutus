@@ -53,7 +53,7 @@ To test it, just add the body as following
 
 ![Example 1](./assets/example-combine-body.png)
 
-```Rememeber to change the values of the parameters with the actual values that you want to test.```
+```Rememeber to change the values of the body with the actual values that you want to test.```
 
 Now, Wait for the logs to complete
 
