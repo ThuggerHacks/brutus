@@ -1,6 +1,6 @@
 # Brutus
 
-![Logo](./assets/logo.png)
+![Logo](./assets/brutus.jfif)
 
 **Brutus** is a powerful bruteforce utility designed to automate the process of attempting to gain access to a system via brute force. It uses Puppeteer to simulate user interactions and attempts to login with different combinations of passwords.
 
@@ -46,7 +46,14 @@ To test it, just add the body as following
 
 ![Example 1](./assets/example-combine-body.png)
 
-Now, Wait for the logs to complete, The last log on the console will be the user credentials, it will have the last index value as **true**
+```Rememeber to change the values of the parameters with the actual values that you want to test.```
+
+Now, Wait for the logs to complete
+
+![Example 2](./assets/example-log.png)
+
+The last log on the console will be the user credentials, it will have 
+the last index value as **true**
 
 ![Example 2](./assets/console-success.png)
 
@@ -72,6 +79,6 @@ Note that you can pass other parameters if you want to customize your selectors:
     - `buttonSelector`: The CSS selector for the login button.
 
 
-Please note that this tool is intended for ethical use only. Always obtain proper authorization before conducting penetration testing.
+⚠️ Please note that this tool is intended for ethical use only. Always obtain proper authorization before conducting penetration testing.
 
-Feel free to contribute with any ideas! :)
+Feel free to contribute with any ideas! 😁
