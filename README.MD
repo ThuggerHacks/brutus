@@ -20,7 +20,7 @@ To use this tool, you need to have Node.js and npm installed on your machine. Fo
 ## Usage
 To run the **Brutus**, follow these steps:
 
-1. Start the server: `npm start`
+1. Start the server: `npm run dev`
 2. Send a POST request to the `/combine` endpoint with the following parameters:
 
     - `url`: The URL of the login page.
