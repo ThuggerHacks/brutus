@@ -1,6 +1,6 @@
 # Brutus
 
-![Logo](./assets/brutus.jfif)
+<img src="./assets/brutus.jfif" alt="Logo" width="100" height="100">
 
 **Brutus** is a powerful bruteforce utility designed to automate the process of attempting to gain access to a system via brute force. It uses Puppeteer to simulate user interactions and attempts to login with different combinations of passwords.
 
