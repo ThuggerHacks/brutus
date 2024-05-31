@@ -33,7 +33,12 @@ To run the **Brutus**, follow these steps:
     - `minLength`: The minimum length of the password combinations.
     - `maxLength`: The maximum length of the password combinations.
 
-    ```Note: You can obtain all these selectors by inspecting your target website and extracting them```
+- Note: You can obtain all these selectors by inspecting your target website and extracting them. For the `messageErrorSelector`, follow these steps:
+
+    1. Manually attempt to login to your target website using incorrect credentials.
+    2. An error message will likely appear.
+    3. Inspect the element containing the error message.
+    4. Extract any selector from this element.
 
 3. The server will respond with either "Login successful" or "Login failed".
 
