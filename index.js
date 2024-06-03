@@ -19,15 +19,11 @@ const handleLogin = async (
     messageErrorSelector
 ) => {
     try {
-
-        //remove the errorMessage from dom
-        await  page.reload();
         // Fill out the login form
-        await page.focus(emailSelector);
+
+        await page.reload();
         await page.type(emailSelector, emailValue);
-        await page.focus(passwordSelector);
         await page.type(passwordSelector, passwordValue);
-        await page.click(buttonSelector);  // submit button click
 
         await page.click(buttonSelector);  // submit button click
         console.log("Form submitted");
@@ -42,8 +38,10 @@ const handleLogin = async (
             // Assuming if no error message appears within the timeout, login is successful
         }
 
+
         // Extract the login status message
         let loginStatus = null;
+        let buttonExists = null;
         if (loginStatusElement) {
             // Extract the text content of the element
             loginStatus = await page.evaluate(selector => {
@@ -51,8 +49,17 @@ const handleLogin = async (
             }, messageErrorSelector);
         }
 
+        // Check if the button exists on the page or not
+        try {
+            buttonExists = await page.waitForSelector(buttonSelector, { timeout: 5000 });
+        } catch (error) {
+            // Assuming if no button appears within the timeout, login is successful
+            
+        }
+
+
         // Determine login status
-        if (!loginStatus) {
+        if ((!loginStatus || loginStatus == "") && !buttonExists) {
             console.log("Login successful");
             return true;
         }
@@ -154,6 +161,7 @@ app.post("/test", async (req, res) => {
     const page = await browser.newPage();
     await page.goto(url);
     console.log("Page opened");
+
 
     const result = await handleLogin(
         page,
